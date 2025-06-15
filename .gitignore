@@ -38,7 +38,7 @@
 build/
 
 # datasets files
-datasets
+datasets/
 
 # weights files
 weights/

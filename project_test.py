@@ -8,6 +8,7 @@
 · 学习率(learning_rate): 在每个批量/训练轮中更新模型参数的幅度。较小的值会产生较慢的学习速度，而较大的值可能导致训练期间出现不可预测的行为
 """
 
+import os
 import torch
 import numpy as np
 from torch import nn
@@ -105,6 +106,8 @@ def val(dataloader, model, loss_fn):
 
 # 开始训练
 epochs = 10
+os.makedirs("./datasets", exist_ok=True)
+os.makedirs("./weight", exist_ok=True)
 for i in range(epochs):
 	print(f"Epoch {i+1}/{epochs}\n---------------------------------")
 	train(train_loader, model, loss_fn, optimizer,i)
